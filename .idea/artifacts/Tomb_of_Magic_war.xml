@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Tomb-of-Magic:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Tomb-of-Magic</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Tomb-of-Magic.war">
+      <element id="artifact" artifact-name="Tomb-of-Magic:war exploded" />
+    </root>
+  </artifact>
+</component>
