@@ -17,7 +17,7 @@ import java.util.Objects;
 @WebServlet("/element")
 public class ElementServlet extends HttpServlet {
     public static final int START_LEVEL = 0;
-    private final GameService gameService = new GameService();
+    private final GameService gameService = GameService.INSTANCE;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

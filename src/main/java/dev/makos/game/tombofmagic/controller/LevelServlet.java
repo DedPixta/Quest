@@ -16,16 +16,21 @@ import java.io.IOException;
 @WebServlet("/level")
 public class LevelServlet extends HttpServlet {
 
-    private final GameService gameService = new GameService();
+    private final GameService gameService = GameService.INSTANCE;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession();
 
-        String levelIdString = (String) currentSession.getAttribute("levelId");
+//        int levelIdString = (int) currentSession.getAttribute("levelId");
 
-        int levelId = Integer.parseInt(levelIdString);
+//        int levelId = currentSession.getAttribute("levelId") != null
+//                ? Integer.parseInt(levelIdString)
+//                : 0;
 
+        int levelId = currentSession.getAttribute("levelId") != null
+                ? (int) currentSession.getAttribute("levelId")
+                : 0;
         Element element = (Element) currentSession.getAttribute("element");
 
         int button = req.getParameter("button") != null

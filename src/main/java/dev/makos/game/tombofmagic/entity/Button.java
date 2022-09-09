@@ -19,6 +19,11 @@ public class Button {
 
     private Element requirement;
 
+    public Button(String mainDescription, int mainLevel) {
+        this.mainDescription = mainDescription;
+        this.mainLevel = mainLevel;
+    }
+
     public String getDescription(Element element) {
         if (Objects.isNull(this.requirement)) {
             return mainDescription;

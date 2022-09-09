@@ -1,33 +1,14 @@
 ---
 - id: 0
-  name: "Главное меню"
-  image: "../temp/images/entry.jpg"
-  description: "Главное меню"
-  buttons:
-  - mainDescription: "Продолжить"
-  - mainDescription: "Новая игра"
-    mainLevel: 1
-- id: 1
   name: "Пролог"
-  image: "../temp/images/entry.jpg"
+  image: "entry.jpg"
   description: "История повествует о странствующем волшебнике, искавшего древний источник знаний. Согласно древним письменностям источником является заброшенная Гробница магии, секреты которой так и не были раскрыты. Потратив годы на поиски, он обнаружил её в непроходимых джунглях. Но сможет ли он постичь новых знаний или его ожидает опасность, будет зависеть от принятых решений…"
   buttons:
   - mainDescription: "Далее"
     mainLevel: 2
-- id: 2
-  name: "Выбор стихии"
-  image: "../temp/images/entry.jpg"
-  description: "Стихия повлияет на ваши возможности и доступные действия"
-  buttons:
-    - mainDescription: "Вода"
-      mainLevel: 3
-    - mainDescription: "Земля"
-      mainLevel: 3
-    - mainDescription: "Огонь"
-      mainLevel: 3
-- id: 3
+- id: 1
   name: "Вход в гробницу"
-  image: "../temp/images/entry.jpg"
+  image: "entry.jpg"
   description: "Вход в гробницу находился в самой глуши леса. Он порос растительностью и трудно было разобрать надписи, высеченные на нем. Выглядело все это зловеще, даже пугающе…"
   buttons:
     - mainDescription: "Войти"
@@ -36,9 +17,9 @@
       mainLevel: 6
     - mainDescription: "Осмотреться"
       mainLevel: 4
-- id: 4
+- id: 2
   name: "Осмотр входа"
-  image: "../temp/images/entry.jpg"
+  image: "entry.jpg"
   description: "Вы осматриваетесь. Рядом стоящий монумент привлекает ваше внимание. На нем описывается некая тайная сила, неподвластной никому... 
 Под надписью изображен знак похожий на руну магии, возможно, он означает что-то важное. Из-за множества пройденных лет руна покрылась толстым слоем пыли и копоти.
 "
@@ -50,16 +31,16 @@
       mainLevel: 9
       altLevel: 7
       requirement: "WATER"
-- id: 5
+- id: 3
   name: "Спуск"
-  image: "../temp/images/entry.jpg"
+  image: "entry.jpg"
   description: "Войдя в гробницу, вы начинаете спускаться по мрачной лестнице. Она введет куда-то глубоко вниз. Лишь остатки солнечного света освещают вам путь. Каждая пройденная ступенька внушает в вас долю сомнению, стоило ли сюда входить и безопасно ли идти дальше…"
   buttons:
     - mainDescription: "Продолжить спускаться"
       mainLevel: 10
-- id: 6
+- id: 4
   name: "Поражение - уход"
-  image: "../temp/images/entry.jpg"
+  image: "entry.jpg"
   description: "Вы побоялись за свою жизнь и ушли, так и не узнав, что скрывает гробница."
   buttons:
     - mainDescription: "Новая игра"
