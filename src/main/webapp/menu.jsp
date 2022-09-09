@@ -16,7 +16,7 @@
 <body>
 <div class = "container">
     <h1>Tomb of Magic</h1>
-    <img src="images/menu" class="img-fluid" alt="image">
+    <img src="images/tomb_of_magic.jpg" class="img-fluid" alt="image">
     <c:if test = "${not empty sessionScope.levelId}">
     <a href="level">Продолжить</a>
     </c:if>

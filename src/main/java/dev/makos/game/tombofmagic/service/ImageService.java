@@ -24,8 +24,6 @@ public enum ImageService {
 
     @SneakyThrows
     public Optional<Path> getImagePath(String filename) {
-        return Files.exists(root.resolve(filename))
-                ? Optional.of(root.resolve(filename))
-                : Optional.of(root.resolve("no-image.png"));
+        return Optional.of(root.resolve(filename));
     }
 }

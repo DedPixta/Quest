@@ -1,6 +1,5 @@
 package dev.makos.game.tombofmagic.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +8,6 @@ import java.util.Objects;
 
 @Getter
 @Setter
-@AllArgsConstructor //TODO delete after?
 @NoArgsConstructor
 public class Button {
     private String mainDescription;

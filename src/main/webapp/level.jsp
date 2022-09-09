@@ -31,17 +31,19 @@
         </div>
         <div class="row row-cols-2">
             <c:forEach items="${requestScope.level.getButtons()}" var="button" varStatus="loopCounter">
-                <c:if test="${not empty button.getDescription(param.Element)}">
+                <c:set var="id" scope="page" value="${loopCounter.index}"/>
+                <c:set var="buttonDesc" scope="page" value="${button.getDescription(sessionScope.element)}"/>
+                <c:if test="${not empty buttonDesc}">
                     <div class="col">
-                        <a href="level?button=${loopCounter.current}">
-                            <c:out value="${button.getDescription(param.Element)}"/><p>
+                        <a href="level?button=${id}">
+                            <c:out value="${buttonDesc}"/>
                         </a>
                     </div>
                 </c:if>
-                ${loopCounter.index}
             </c:forEach>
         </div>
     </div>
+
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

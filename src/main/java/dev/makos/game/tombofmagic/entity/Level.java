@@ -1,16 +1,13 @@
 package dev.makos.game.tombofmagic.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @ToString(of = "id", includeFieldNames = false)
-@AllArgsConstructor // TODO delete?
 public class Level {
 
     private int id;

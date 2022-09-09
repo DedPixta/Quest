@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class = "container">
-    <img src="images/element" class="img-fluid" alt="image">
+    <img src="images/elements.jpg" class="img-fluid" alt="image">
     <p>Стихия повлияет на ваши возможности и доступные действия</p>
     <div class="container text-center">
         <div class="row">
