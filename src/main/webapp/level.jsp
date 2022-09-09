@@ -31,11 +31,14 @@
         </div>
         <div class="row row-cols-2">
             <c:forEach items="${requestScope.level.getButtons()}" var="button" varStatus="loopCounter">
-                <div class="col">
-                    <a href="level?button=${loopCounter.count - 1}">
-                        <c:out value="${button.getDescription(param.Element)}"/><p>
-                    </a>
-                </div>
+                <c:if test="${not empty button.getDescription(param.Element)}">
+                    <div class="col">
+                        <a href="level?button=${loopCounter.current}">
+                            <c:out value="${button.getDescription(param.Element)}"/><p>
+                        </a>
+                    </div>
+                </c:if>
+                ${loopCounter.index}
             </c:forEach>
         </div>
     </div>
