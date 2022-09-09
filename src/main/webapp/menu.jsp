@@ -11,12 +11,17 @@
     <title>Tomb</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
 <div class = "container">
-    <h1>Tomb of Magic</h1>
-    <img src="images/tomb_of_magic.jpg" class="img-fluid" alt="image">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <h1 class="name">Tomb of Magic</h1>
+        </div>
+    </nav>
+    <img src="images/tomb_of_magic.jpg" class="image img-fluid" alt="image">
     <c:if test = "${not empty sessionScope.levelId}">
     <a href="level">Продолжить</a>
     </c:if>

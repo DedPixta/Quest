@@ -8,10 +8,11 @@
     <title>Tomb</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
 <div class = "container">
-    <img src="images/elements.jpg" class="img-fluid" alt="image">
+    <img src="images/elements.jpg" class="image img-fluid" alt="image">
     <p>Стихия повлияет на ваши возможности и доступные действия</p>
     <div class="container text-center">
         <div class="row">
