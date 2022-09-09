@@ -17,7 +17,7 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/menu">Menu</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/">Menu</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             </button>
@@ -29,8 +29,6 @@
         <div class="col-md-6 px-0">
             <p class="lead my-3">${requestScope.level.getDescription()}</p>
         </div>
-    </div>
-    <div class="container text-center">
         <div class="row row-cols-2">
             <c:forEach items="${requestScope.level.getButtons()}" var="button" varStatus="loopCounter">
                 <div class="col">
@@ -41,6 +39,7 @@
             </c:forEach>
         </div>
     </div>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"

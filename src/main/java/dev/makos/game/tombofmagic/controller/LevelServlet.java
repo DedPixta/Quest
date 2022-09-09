@@ -22,30 +22,28 @@ public class LevelServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession();
 
-//        int levelIdString = (int) currentSession.getAttribute("levelId");
-
-//        int levelId = currentSession.getAttribute("levelId") != null
-//                ? Integer.parseInt(levelIdString)
-//                : 0;
-
-        int levelId = currentSession.getAttribute("levelId") != null
-                ? (int) currentSession.getAttribute("levelId")
-                : 0;
+        int levelId = (int) currentSession.getAttribute("levelId");
         Element element = (Element) currentSession.getAttribute("element");
 
-        int button = req.getParameter("button") != null
-                ? Integer.parseInt(req.getParameter("button"))
-                : 0;
+        String button = req.getParameter("button");
 
-        Level nextLevel = levelId == 0
-                ? gameService.getLevel(levelId)
-                : gameService.getNextLevel(element, levelId, button);
+        Level nextLevel;
+        if (button == null){
+            nextLevel = gameService.getLevel(levelId);
+        } else {
+            int buttonId = Integer.parseInt(req.getParameter("button"));
+            nextLevel = gameService.getNextLevel(element, levelId, buttonId);
+        }
+        if (nextLevel == null) {
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/element");
+            requestDispatcher.forward(req, resp);
+        } else {
+            req.setAttribute("level", nextLevel);
+            currentSession.setAttribute("levelId", nextLevel.getId());
+            currentSession.setAttribute("levelName", nextLevel.getName());
 
-        req.setAttribute("level", nextLevel);
-        currentSession.setAttribute("levelId", nextLevel.getId());
-        currentSession.setAttribute("levelName", nextLevel.getName());
-
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/level.jsp");
-        requestDispatcher.forward(req, resp);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/level.jsp");
+            requestDispatcher.forward(req, resp);
+        }
     }
 }

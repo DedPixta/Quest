@@ -1,8 +1,6 @@
 package dev.makos.game.tombofmagic.controller;
 
 import dev.makos.game.tombofmagic.entity.Element;
-import dev.makos.game.tombofmagic.entity.Level;
-import dev.makos.game.tombofmagic.service.GameService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,29 +15,32 @@ import java.util.Objects;
 @WebServlet("/element")
 public class ElementServlet extends HttpServlet {
     public static final int START_LEVEL = 0;
-    private final GameService gameService = GameService.INSTANCE;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String buttonParam = req.getParameter("button");
+        String elementParam = req.getParameter("element");
 
-        if (Objects.isNull(buttonParam)){
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/element.jsp");
-            requestDispatcher.forward(req, resp);
-        }
+        if (Objects.isNull(elementParam)) {
+            resp.sendRedirect("element?element=0");
+        } else {
+            int elementNumber = Integer.parseInt(elementParam);
+            Element element = switch (elementNumber) {
+                case 1 -> Element.WATER;
+                case 2 -> Element.EARTH;
+                case 3 -> Element.FIRE;
+                default -> Element.NONE;
+            };
 
-        int button = Integer.parseInt(buttonParam);
-        HttpSession currentSession = req.getSession();
-        Element element = switch(button) {
-            case 0 -> Element.WATER;
-            case 1 -> Element.EARTH;
-            default -> Element.FIRE;
-        };
-        currentSession.setAttribute("element", element);
-        if (currentSession.getAttribute("levelId") == null) {
-            currentSession.setAttribute("levelId", START_LEVEL);
+            if (Element.NONE == element) {
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/element.jsp");
+                requestDispatcher.forward(req, resp);
+            } else {
+                HttpSession currentSession = req.getSession();
+                currentSession.setAttribute("element", element);
+                currentSession.setAttribute("levelId", START_LEVEL);
+                RequestDispatcher requestDispatcher = req.getRequestDispatcher("/level");
+                requestDispatcher.forward(req, resp);
+            }
         }
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/level");
-        requestDispatcher.forward(req, resp);
     }
 }
