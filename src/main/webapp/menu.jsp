@@ -8,27 +8,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Tomb</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <%--    Fonts   --%>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+
+    <%--    Styles   --%>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="static/style.css">
+
+    <title>Tomb</title>
 </head>
 
 <body>
-<div class = "container">
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <h1 class="name">Tomb of Magic</h1>
+<div class="container">
+    <div class="container-fluid d-flex justify-content-center p-5">
+        <div class="jumbotron p-3 p-md-5">
+            <div class="block_name">
+                <h1 class="text_name">Tomb of Magic</h1>
+            </div>
+            <img src="images/tomb_of_magic.jpg" class="image img-fluid mb-4" alt="image">
+            <c:if test="${not empty sessionScope.levelId}">
+                <div class="col m-2">
+                    <a href="level" class="button">Продолжить</a>
+                </div>
+            </c:if>
+            <div class="col m-2">
+                <a href="element?element=0" class="button">Новая игра</a>
+            </div>
         </div>
-    </nav>
-    <img src="images/tomb_of_magic.jpg" class="image img-fluid" alt="image">
-    <c:if test = "${not empty sessionScope.levelId}">
-    <a href="level">Продолжить</a>
-    </c:if>
-    <a href="element?element=0">Новая игра</a>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
 
