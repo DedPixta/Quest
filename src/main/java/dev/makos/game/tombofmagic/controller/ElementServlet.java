@@ -24,12 +24,21 @@ public class ElementServlet extends HttpServlet {
             resp.sendRedirect("element?element=0");
         } else {
             int elementNumber = Integer.parseInt(elementParam);
-            Element element = switch (elementNumber) {
-                case 1 -> Element.WATER;
-                case 2 -> Element.EARTH;
-                case 3 -> Element.FIRE;
-                default -> Element.NONE;
-            };
+            Element element;
+            switch (elementNumber) {
+                case 1:
+                    element = Element.WATER;
+                    break;
+                case 2:
+                    element = Element.EARTH;
+                    break;
+                case 3:
+                    element = Element.FIRE;
+                    break;
+                default:
+                    element = Element.NONE;
+            }
+            ;
 
             if (Element.NONE == element) {
                 RequestDispatcher requestDispatcher = req.getRequestDispatcher("/element.jsp");
