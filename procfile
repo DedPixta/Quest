@@ -1,1 +1,1 @@
-web: java -war target/Tomb-of-Magic.war --path menu
+web: java -war target/Tomb-of-Magic.war --path ./menu
