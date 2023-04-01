@@ -1,23 +1,51 @@
 package dev.makos.game.tombofmagic.entity;
 
 import lombok.*;
+import org.hibernate.Hibernate;
 
-import java.util.List;
+import javax.persistence.*;
+import java.util.Objects;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 
 @Getter
 @Setter
-@NoArgsConstructor
-@ToString(of = "id", includeFieldNames = false)
+
+@Entity
+@Table(name = "levels")
 public class Level {
 
-    private int id;
-    private String name;
-    private String image;
-    private String description;
-    private List<Button> buttons;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "level_id")
+    private Long id;
 
-    public int getNextLevelId(Element element, int clickedButton) {
-        return buttons.get(clickedButton)
-                .getNextLevelId(element);
+    @Column(name = "game_id")
+    private Long gameId;
+
+    @Column(length = 32)
+    private String name;
+
+    private String image;
+
+    private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "game_status")
+    private GameStatus gameStatus;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Level level = (Level) o;
+        return getId() != null && Objects.equals(getId(), level.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }

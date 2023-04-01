@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="230124-210815" author="kossatyy">
+        <createTable tableName="buttons">
+            <column
+                    name="button_id"
+                    type="bigint"
+                    autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="main_description" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="alt_description" type="text"/>
+            <column name="main_next_level_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="alt_next_level_id" type="bigint"/>
+            <column name="level_id" type="bigint">
+            </column>
+            <column name="requirement_id" type="bigint">
+                <constraints
+                        foreignKeyName="fk_buttons_requirement_id"
+                        referencedTableName="requirements"
+                        referencedColumnNames="requirement_id"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint
+                constraintName="fk_buttons_main_next_level_id"
+                baseTableName="buttons"
+                baseColumnNames="main_next_level_id"
+                referencedTableName="levels"
+                referencedColumnNames="level_id"
+                onDelete="SET NULL"
+                onUpdate="CASCADE"
+                deferrable="true"
+                initiallyDeferred="true"
+                validate="true"/>
+        <addForeignKeyConstraint
+                constraintName="fk_buttons_alt_next_level_id"
+                baseTableName="buttons"
+                baseColumnNames="alt_next_level_id"
+                referencedTableName="levels"
+                referencedColumnNames="level_id"
+                onDelete="SET NULL"
+                onUpdate="CASCADE"
+                deferrable="true"
+                initiallyDeferred="true"
+                validate="true"/>
+        <addForeignKeyConstraint
+                constraintName="fk_buttons_level_id"
+                baseTableName="buttons"
+                baseColumnNames="level_id"
+                referencedTableName="levels"
+                referencedColumnNames="level_id"
+                onDelete="CASCADE"
+                onUpdate="CASCADE"
+                deferrable="true"
+                initiallyDeferred="true"
+                validate="true"/>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,10 +1,18 @@
 package dev.makos.game.tombofmagic.repository;
 
-import dev.makos.game.tombofmagic.entity.Level;
+import java.util.stream.Stream;
 
-import java.util.Map;
+public interface Repository<T> {
 
-public interface Repository {
+    T getById(long id);
 
-    Map<Integer, Level> getGameMap();
+    void create(T entity);
+
+    void update(T entity);
+
+    void deleteById(long id);
+
+    Stream<T> getAll();
+
+    Stream<T> find(T entity);
 }

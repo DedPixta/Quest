@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.game_logo {
+    height: 120px;
+    width: 160px;
+    border-radius: 6px;
+}
+
+p {
+    margin: 0;
+}
+
+.center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container_mini {
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+}
+

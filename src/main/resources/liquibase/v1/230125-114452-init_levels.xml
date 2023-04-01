@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="230125-114452-1" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Пролог</column>
+            <column name="description">История повествует о странствующем волшебнике, искавшего древний источник знаний. Согласно древним письменностям одним из таких источников является заброшенная Гробница магии, секреты которой так и не были раскрыты. Потратив годы на поиски, волшебник обнаружил её в непроходимых джунглях. Но сможет ли он постичь новых знаний или его ожидает опасность, будет зависеть от принятых решений…</column>
+            <column name="image">wizard.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-2" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Вход в гробницу</column>
+            <column name="description">Вход в гробницу находился в самой глуши леса. Он порос растительностью и трудно было разобрать надписи, высеченные на нем. Выглядело все это зловеще, даже пугающе…</column>
+            <column name="image">entry.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-3" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Осмотр входа</column>
+            <column name="description">Вы осматриваетесь. Рядом стоящий монумент привлекает ваше внимание. На нем описывается некая тайная сила, неподвластной никому... Под надписью изображен знак похожий на руну магии, возможно, он означает что-то важное. Из-за множества пройденных лет руна покрылась толстым слоем пыли и копоти.</column>
+            <column name="image">entry_inscription.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-4" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Спуск</column>
+            <column name="description">Войдя в гробницу, вы начинаете спускаться по мрачной лестнице. Она введет куда-то глубоко вниз. Лишь остатки солнечного света освещают вам путь. Каждая пройденная ступенька внушает в вас долю сомнению, стоило ли сюда входить и безопасно ли идти дальше…</column>
+            <column name="image">stairs.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-5" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Поражение - уход</column>
+            <column name="description">Вы побоялись за свою жизнь и ушли, так и не узнав, что скрывает гробница.</column>
+            <column name="image">lose_runaway.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">LOST</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-6" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Другая стихия</column>
+            <column name="description">Ваши попытки очистить руну были тщетны, так как ваша стихия не подходит для таких целей. Нужно осмотреть хотя бы часть руны.</column>
+            <column name="image">magic.png</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-7" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Часть руны</column>
+            <column name="description">Видны очертания некой руны. Она имеет некое свечение, похоже она излучает магию.</column>
+            <column name="image">entry_inscription_dark.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-8" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Целая руна</column>
+            <column name="description">Ваша стихия прекрасно подошла, чтобы очистить надпись. Перед вами появилась руна. Она имеет некое свечение, похоже она излучает магию.</column>
+            <column name="image">entry_inscription_clear.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-9" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Врата</column>
+            <column name="description">Спустившись вниз, вы обнаружили закрытые врата. Похоже они запечатаны магией. На них имеются надписи, как и на входе в гробницу. Для их открытия нужно использовать правильную руну магии, но какую…</column>
+            <column name="image">gate.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-10" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Выбор руны</column>
+            <column name="description">Вас окутывает чувство дежавю и вам кажется, что вы уже встречали одну из рун ранее. Нужно быть аккуратным при выборе. Магия рун не прощает ошибок…</column>
+            <column name="image">runes.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-11" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Проход за вратами</column>
+            <column name="description">Перед вами распахиваются врата, и вы следуете дальше по тропе. Здешняя флора пропитана магией и каждое отдельное растение переливается в различных цветах. В конце прохода слышны звуки…</column>
+            <column name="image">passage_after_gate.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-12" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Обвал</column>
+            <column name="description">Выбранная руна была ошибкой! Земля начинает сотрясаться под ногами. Похоже сработала защитная магия врат! Землетрясение повлекло обрушение потолка. Осторожней…</column>
+            <column name="image">collapse.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-13" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Перекресток</column>
+            <column name="description">Идя на звук, вы доходите до развилки. Вы обращаете внимание на свет, исходящего из правого прохода, возможно там кто-то есть. Внезапно в глаза вам бросается некое существо, скрывающегося в темноте центрального прохода. Выглядит оно недоброжелательно. Левее существа есть проход куда-то выше, возможно если пройти мимо, существо не обратит на вас внимание.</column>
+            <column name="image">crossroad.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-14" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Защита от обвала</column>
+            <column name="description">Благодаря силе земли вам удается защититься от падающих обломков. Вы остались целы. Похоже один из осколков повредил врата, и они распахнулись.</column>
+            <column name="image">earth_magic.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-15" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Поражение - обвал</column>
+            <column name="description">Ни попытка побега, ни ваша магия не смогли вас уберечь от падающих осколков. Вы умираете… Похоже эта гробница теперь и ваша тоже…</column>
+            <column name="image">lose_collapse.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">LOST</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-16" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Комната с алтарем</column>
+            <column name="description">В комнате вы обнаружили алтарь с зажжёнными свечами, но никого больше не наблюдаете.</column>
+            <column name="image">altar_room.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-17" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Верхняя комната</column>
+            <column name="description">Поднявшись наверх, вы обнаруживаете просторный зал. В центре, которого находится статуя падшего ангела. На другом конце виднеется проход куда-то дальше, но дорога становится все мрачнее и мрачнее. Нагнетающая обстановка все больше оказывает на вас влияние…</column>
+            <column name="image">upper_room.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-18" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Существо</column>
+            <column name="description">Вы начали приближаться к этому существу, но оно испугалось и убежало куда-то в глубь темноты…</column>
+            <column name="image">creature.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-19" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Алтарь</column>
+            <column name="description">На алтаре разбросаны различные вещи, но ничего интересного вы не находите.</column>
+            <column name="image">altar.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-20" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Проход</column>
+            <column name="description">Вы проходите дальше и наблюдаете длинный коридор ведущий вас все глубже. Чувствуется, что влажность в этой части подземелья выше, чем в предыдущих местах. Из-за такого климата дорожка покрылась слоем слизи. Нерасторопно передвигаясь, вы продолжаете свой путь…</column>
+            <column name="image">passage_after_upper_room.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-21" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Темнота</column>
+            <column name="description">Тьма сгущается, и вы перестаете различать дорогу под ногами. Дальнейшее передвижение может быть опасно, передвигаться придется на ощупь. Неизвестно чего ожидать в глубине прохода…</column>
+            <column name="image">darkness.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-22" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Комната пыток</column>
+            <column name="description">Вы проходите дальше и вас охватывает озноб… Температура помещения и правда здесь низкая, но это был шок от увиденного. Похоже здесь находилась своего рода комната пыток. Огромные клетки спускались с потолка. От увиденного вам захотелось быстрее покинуть данное помещение…</column>
+            <column name="image">torture_room.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-23" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Найден проход</column>
+            <column name="description">Без ваших способностей вы бы долго блуждали во тьме, но тут обнаруживаете узкий проход. Этот проход выводит вас лестницу ведущую куда-то вверх…</column>
+            <column name="image">out_of_the_dark.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-24" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Поражение - темнота</column>
+            <column name="description">Пройдя значительное расстояние, вы перестаете разбирать куда идти дальше, похоже вы заблудились в темноте. Этот проход похож на лабиринт. Вас охватывает паника и беспомощность. Идти сюда было глупой затеей, которая повлекла вечным скитанием в кромешной тьме…</column>
+            <column name="image">lose_darkness.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">LOST</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-25" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Стоки</column>
+            <column name="description">Дорога выводит вас на сточный канал. Повсюду находится зловонный запах. Вы чувствуете легкий ветерок, тянущийся откуда-то из глубины…</column>
+            <column name="image">drains.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-26" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Проход к сокровищнице</column>
+            <column name="description">Поднявшись наверх, вы обнаруживаете коридор ведущий в единственную комнату с закрытыми дверьми. Добраться до сюда составило много труда. Возможно, кто-то специально сделал такое укромное место.</column>
+            <column name="image">passage_to_treasury.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-27" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Врата судьбы</column>
+            <column name="description">Вы проходите дальше по стокам и натыкаетесь на магические врата. Из них доносится голос… Тихий и спокойный шепот спрашивает у вас: “Вчера было, сегодня есть и завтра будет”. Недолго думая, вы произносите ответ…</column>
+            <column name="image">gate_of_fate.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-28" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Двери</column>
+            <column name="description">В центре комнаты присутствует монумент, на котором висит табличка. Она гласит следующее: “Оно забрало много жизней, но я так и не смог вернуть свое богатство…” Похоже это послание от создателя было его целью жизни, но он так и не смог его постичь. Чтобы это не значило. Перед вами встал выбор дальнейшего пути.</column>
+            <column name="image">crossroad_2.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-29" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Проход судьбы</column>
+            <column name="description">После произнесенного ответа, врата раскрылись и позволили вам пройти дальше. В конце прохода виднеется яркое свечение…</column>
+            <column name="image">passage_of_fate.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-30" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Поражение - 42</column>
+            <column name="description">Ответ, опережающий свое время, но совсем на другой вопрос... Врата закрываются и преграждают вам путь. На этом ваше путешествие заканчивается. Тайна этой гробницы так и останется неизведанной…</column>
+            <column name="image">lose_42.png</column>
+            <column name="game_id">1</column>
+            <column name="game_status">LOST</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-31" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Поражение – ответ судьбы</column>
+            <column name="description">После произнесенного ответа нависла тишина, но после короткого промежутка времени врата закрываются и преграждают вам путь. На этом ваше путешествие заканчивается. Тайна этой гробницы так и останется неизведанной...</column>
+            <column name="image">lose_fate.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">LOST</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-32" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Сокровищница</column>
+            <column name="description">Вы входите в комнату и обнаруживаете, что это сокровищница! Она вся усыпана горами золота и драгоценностями. Пробираясь по этим горам, вы находите в центре помещения саркофаг. Похоже это могила создателя. Надпись на ней гласит: “Его уже нельзя вернуть!” Похоже все эти драгоценности имели мало смысла для него, и он искал что-то другое, но кто знает, что это на самом деле было… На этом ваше приключение заканчивается…</column>
+            <column name="image">final_2.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-33" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Поражение - двери</column>
+            <column name="description">Вы проходите в мало освещенную комнату. Она оказывается полностью пустой. Но тут издается шорох, доносящийся из угла этой комнаты. Вы подходите ближе и понимаете, это существо, которое ранее встречали. Оно, заметив вас, начинает стремительно сближаться, чтобы напасть. Все происходит настолько быстро, что вы даже не успеваете среагировать… Этот монстр не оставляет вам и шансов на выживание…</column>
+            <column name="image">lose_doors.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">LOST</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-34" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Гробница</column>
+            <column name="description">Вы идете дальше на свечение, но ваша дорога прерывается обрывом. Дойдя до него, вас завораживает увиденное… Это погребальный зал – сердце данной гробницы. Вы лицезрите от части пугающий, но и в тоже время захватывающий вид. Вы понимаете, что почти достигли своей цели и осталось совсем чуть-чуть…</column>
+            <column name="image">tomb_room.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-35" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Финал</column>
+            <column name="description">Одна из историй о приключении странствующего волшебника была завершена. На этом его путь продолжается, в поисках чего-то неизведанного… И кто знает куда его занесет в следующий раз на этой необъятной земле. Ведь она заполнена множеством волшебных и загадочных мест, а также их обитателей…</column>
+            <column name="image">final.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">WIN</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-36" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Саркофаг</column>
+            <column name="description">Вы спускаетесь и обнаруживаете в центре этого помещения открытый гроб с останками внутри. Диадема и наряд натолкнули на мысль, что перед вами находится принцесса. Однако, вам не понятно столь странное расположение и причины произошедшего… Всматриваясь, обнаруживаете в одной из рук клочок бумаги, похожий на письмо и рядом лежащий клинок…</column>
+            <column name="image">tomb.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-37" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Письмо</column>
+            <column name="description">Сверток представлял собой записку, оставленную после своей смерти. В ней описываются чувства, которые она испытывала к своему возлюбленному. Её переживания за него, и что он был в постоянном поиске некого сокровища… Она не понимала столь ослепленного желания найти его, ведь они были счастливы вместе, но ему было всего мало, имея при этом кучи драгоценностей и власти… После его смерти она не видела больше смысла жизни и покончила с собой, в надежде воссоединиться со своим возлюбленным.</column>
+            <column name="image">scroll.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+    <changeSet id="230125-114452-38" author="kossatyy">
+        <insert tableName="levels">
+            <column name="name">Финальное слово</column>
+            <column name="description">Заканчивая читать письмо, вы осматриваетесь вокруг, но ничего интересного больше не находите. У вас на уме остаются лишь мысли что же искал этот человек. Почему он так жаждал достичь его, забывая о своей любви. А также сокровища, которое вы нигде не смогли обнаружить… Вам ничего больше не остается как покинуть это место…</column>
+            <column name="image">final_word.jpg</column>
+            <column name="game_id">1</column>
+            <column name="game_status">PLAY</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

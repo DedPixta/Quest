@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="230124-210325" author="kossatyy">
+        <createTable tableName="levels">
+            <column
+                    name="level_id"
+                    type="bigint"
+                    autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="game_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="game_status" type="text">
+                <constraints
+                        nullable="false"
+                        foreignKeyName="fk_levels_game_status"
+                        referencedTableName="game_status"
+                        referencedColumnNames="status"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint
+                constraintName="fk_requirements_game_id"
+                baseTableName="levels"
+                baseColumnNames="game_id"
+                referencedTableName="games"
+                referencedColumnNames="game_id"
+                onDelete="CASCADE"
+                onUpdate="CASCADE"
+                deferrable="true"
+                initiallyDeferred="true"
+                validate="true"/>
+    </changeSet>
+
+</databaseChangeLog>

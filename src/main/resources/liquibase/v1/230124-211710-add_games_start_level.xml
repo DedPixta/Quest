@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="230124-211710" author="kossatyy">
+
+        <addColumn tableName="games">
+            <column afterColumn="author_id"
+                    name="start_level_id"
+                    type="bigint"/>
+        </addColumn>
+        <addForeignKeyConstraint
+                baseTableName="games"
+                constraintName="fk_games_start_level_id"
+                baseColumnNames="start_level_id"
+                referencedTableName="levels"
+                referencedColumnNames="level_id"/>
+    </changeSet>
+
+</databaseChangeLog>

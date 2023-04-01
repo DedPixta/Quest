@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="230125-114011-1" author="kossatyy">
+        <insert tableName="games">
+            <column name="name">Tomb of magic</column>
+            <column name="game_description">История повествует о странствующем волшебнике, искавшего древний источник знаний</column>
+            <column name="requirement_description">Стихия повлияет на ваши возможности и доступные действия</column>
+            <column name="image">tomb_of_magic.jpg</column>
+            <column name="author_id">2</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
