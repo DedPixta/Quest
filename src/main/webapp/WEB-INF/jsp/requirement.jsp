@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/game.css"/>
 </head>
 <body>
-<div class="container" style="background-image: url(/images/games/game_${game.id}/util/bg.jpg);">
+<div class="container" style="background-image: url(${pageContext.request.contextPath}/images/games/game_${game.id}/util/bg.jpg);">
     <div class="header container-fluid">
         <h1 class="header-brand">${game.name}</h1>
     </div>

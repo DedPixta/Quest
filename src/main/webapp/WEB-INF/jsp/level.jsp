@@ -36,7 +36,7 @@
             <p class="text">
             <c:out value="${level.name}"/></p>
         </div>
-        <div class="jumbotron p-3 p-md-5" style="background-image: url(/images/games/game_${game.id}/util/bg_card.jpg);">
+        <div class="jumbotron p-3 p-md-5" style="background-image: url(${pageContext.request.contextPath}/images/games/game_${game.id}/util/bg_card.jpg);">
             <img src="${pageContext.request.contextPath}/images/games/game_${game.id}/${level.image}" class="image img-fluid shadow" alt="image">
             <div class="block_text mt-3 p-3">
                 <p class="text text-start lead">${level.description}</p>
