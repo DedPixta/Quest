@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <include file="v1/230124-195220-add_roles.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230124-195810-add_game_status.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230124-203656-add_users.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230124-205512-add_games.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230124-210233-add_requirements.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230124-210325-add_levels.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230124-210815-add_buttons.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230124-211341-add_game_sessions.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230124-211710-add_games_start_level.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230125-113121-init_roles.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230125-113705-init_users.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230125-114011-init_games.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230125-114132-init_game_status.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230125-114310-init_requirements.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230125-114452-init_levels.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230125-120034-init_buttons.xml" relativeToChangelogFile="true"/>
+    <include file="v1/230125-121900-update_games.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

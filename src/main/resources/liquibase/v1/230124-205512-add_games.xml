@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="230124-205512" author="kossatyy">
+        <createTable tableName="games">
+            <column
+                    name="game_id"
+                    type="bigint"
+                    autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(32)">
+                <constraints
+                        nullable="false"
+                        unique="true"/>
+            </column>
+            <column name="game_description" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="requirement_description" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author_id" type="bigint">
+            </column>
+        </createTable>
+        <addForeignKeyConstraint
+                baseColumnNames="author_id"
+                baseTableName="games"
+                constraintName="fk_games_author_id"
+                referencedColumnNames="user_id"
+                referencedTableName="users"
+                onDelete="SET NULL"/>
+    </changeSet>
+
+</databaseChangeLog>

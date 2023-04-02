@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="230125-114132-1" author="kossatyy">
+        <insert tableName="game_status">
+            <column name="status">LOST</column>
+        </insert>
+    </changeSet>
+      <changeSet id="230125-114132-2" author="kossatyy">
+        <insert tableName="game_status">
+            <column name="status">WIN</column>
+        </insert>
+    </changeSet>
+      <changeSet id="230125-114132-3" author="kossatyy">
+        <insert tableName="game_status">
+            <column name="status">PLAY</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress HttpUrlsUsage -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="230124-211341" author="kossatyy">
+        <createTable tableName="game_sessions">
+            <column
+                    name="game_session_id"
+                    type="bigint"
+                    autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints
+                        nullable="false"
+                        foreignKeyName="fk_game_sessions_user_id"
+                        referencedTableName="users"
+                        referencedColumnNames="user_id"/>
+            </column>
+            <column name="game_id" type="bigint">
+                <constraints
+                        nullable="false"
+                        foreignKeyName="fk_game_sessions_game_id"
+                        referencedTableName="games"
+                        referencedColumnNames="game_id"/>
+            </column>
+            <column name="current_level_id" type="bigint">
+                <constraints
+                        nullable="false"
+                        foreignKeyName="fk_game_sessions_current_level_id"
+                        referencedTableName="levels"
+                        referencedColumnNames="level_id"/>
+            </column>
+            <column name="requirement_id" type="bigint">
+                <constraints
+                        nullable="false"
+                        foreignKeyName="fk_game_sessions_requirement_id"
+                        referencedTableName="requirements"
+                        referencedColumnNames="requirement_id"/>
+            </column>
+            <column name="game_status" type="text">
+                <constraints
+                        nullable="false"
+                        foreignKeyName="fk_game_sessions_game_status"
+                        referencedTableName="game_status"
+                        referencedColumnNames="status"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
