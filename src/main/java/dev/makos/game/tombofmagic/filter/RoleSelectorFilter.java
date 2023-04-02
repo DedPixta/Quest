@@ -1,6 +1,5 @@
 package dev.makos.game.tombofmagic.filter;
 
-import dev.makos.game.tombofmagic.dto.UserDto;
 import dev.makos.game.tombofmagic.entity.Role;
 import dev.makos.game.tombofmagic.error.AppError;
 import dev.makos.game.tombofmagic.utils.Attribute;
@@ -26,7 +25,7 @@ public class RoleSelectorFilter implements Filter {
             Role.GUEST, List.of(ROOT, LOGIN, SIGNUP, MENU),
             Role.USER, List.of(ROOT, LOGIN, SIGNUP, LOGOUT, PROFILE, ACCOUNTS, PLAY, MENU, GAME, REQUIREMENT, LEVEL),
             Role.EDITOR, List.of(ROOT, LOGIN, SIGNUP, LOGOUT, PROFILE, ACCOUNTS, PLAY, MENU, GAME, REQUIREMENT, LEVEL, EDIT_GAME),
-            Role.ADMIN, List.of(ALL)
+            Role.ADMIN, List.of(ROOT, LOGIN, SIGNUP, LOGOUT, PROFILE, ACCOUNTS, PLAY, MENU, GAME, REQUIREMENT, LEVEL, EDIT_GAME, EDIT_USER, ACCOUNTS_DELETE)
     );
 
     @Override
@@ -38,11 +37,12 @@ public class RoleSelectorFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-        Object user = request.getSession().getAttribute(Attribute.USER);
-        Role role = (Objects.isNull(user))
+        Role roleAttribute = (Role) request.getSession().getAttribute(Attribute.ROLE);
+        Role role = (Objects.isNull(roleAttribute))
                 ? Role.GUEST
-                : ((UserDto) user).getRole();
+                : roleAttribute;
         String command = getCommand(request);
+        command = command.equals("/delete") ? ACCOUNTS_DELETE : command;
         if (uriMap.get(role).contains(command)) {
             filterChain.doFilter(req, resp);
         } else {

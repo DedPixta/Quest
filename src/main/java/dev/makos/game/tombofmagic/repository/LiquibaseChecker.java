@@ -17,10 +17,15 @@ import java.util.Map;
 
 public class LiquibaseChecker {
 
+    public static final String HIBERNATE_CONNECTION_URL = "hibernate.connection.url";
+    public static final String HIBERNATE_CONNECTION_USERNAME = "hibernate.connection.username";
+    public static final String HIBERNATE_CONNECTION_PASSWORD = "hibernate.connection.password";
+    public static final String LIQUIBASE_CHANGELOG_PATH = "/liquibase/changelog.xml";
+
     public static void updateDataBase(Configuration configuration) {
-        String url = configuration.getProperty("hibernate.connection.url");
-        String user = configuration.getProperty("hibernate.connection.username");
-        String password = configuration.getProperty("hibernate.connection.password");
+        String url = configuration.getProperty(HIBERNATE_CONNECTION_URL);
+        String user = configuration.getProperty(HIBERNATE_CONNECTION_USERNAME);
+        String password = configuration.getProperty(HIBERNATE_CONNECTION_PASSWORD);
 
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
@@ -31,7 +36,7 @@ public class LiquibaseChecker {
                             .getInstance()
                             .findCorrectDatabaseImplementation(new JdbcConnection(connection));
                     Liquibase liquibase = new Liquibase(
-                            "classpath:/liquibase/changelog.xml",
+                            "classpath:" + LIQUIBASE_CHANGELOG_PATH,
                             new ClassLoaderResourceAccessor(),
                             database
                     );
