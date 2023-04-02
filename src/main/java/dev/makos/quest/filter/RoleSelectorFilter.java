@@ -3,6 +3,7 @@ package dev.makos.quest.filter;
 import dev.makos.quest.entity.Role;
 import dev.makos.quest.error.AppError;
 import dev.makos.quest.utils.Attribute;
+import dev.makos.quest.utils.Go;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -46,7 +47,7 @@ public class RoleSelectorFilter implements Filter {
         if (uriMap.get(role).contains(command)) {
             filterChain.doFilter(req, resp);
         } else {
-            response.sendRedirect(request.getContextPath() + LOGIN);
+            response.sendRedirect(request.getContextPath() + Go.LOGIN);
         }
     }
 

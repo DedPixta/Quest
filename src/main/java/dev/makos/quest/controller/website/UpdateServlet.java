@@ -89,6 +89,7 @@ public class UpdateServlet extends HttpServlet {
             Jsp.forward(req, resp, Jsp.UPDATE);
             return;
         }
-        resp.sendRedirect("/accounts");
+
+        resp.sendRedirect(req.getContextPath() + Go.ACCOUNTS);
     }
 }
