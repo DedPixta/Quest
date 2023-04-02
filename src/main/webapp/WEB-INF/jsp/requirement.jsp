@@ -24,7 +24,7 @@
         <h1 class="header-brand">${game.name}</h1>
     </div>
     <div class="container-fluid d-flex justify-content-center mt-5">
-        <div class="jumbotron p-3 p-md-5" style="background-image: url(/images/games/game_${game.id}/util/bg_card.jpg);">
+        <div class="jumbotron p-3 p-md-5" style="background-image: url(${pageContext.request.contextPath}/images/games/game_${game.id}/util/bg_card.jpg);">
             <%--            TODO remove strict png format ?--%>
             <img src="${pageContext.request.contextPath}/images/games/game_${game.id}/util/requirement.png" class="image img-fluid"
                  alt="image">

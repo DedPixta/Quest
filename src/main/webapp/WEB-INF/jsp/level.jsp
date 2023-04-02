@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/game.css"/>
 </head>
 <body>
-<div class="container d-flex flex-column align-items-center" style="background-image: url(/images/games/game_${game.id}/util/bg.jpg);">
+<div class="container d-flex flex-column align-items-center" style="background-image: url(${pageContext.request.contextPath}/images/games/game_${game.id}/util/bg.jpg);">
     <div class="header container-fluid">
         <h1 class="header-brand"><c:out value="${game.name}"/></h1>
         <div class="button-menu">
