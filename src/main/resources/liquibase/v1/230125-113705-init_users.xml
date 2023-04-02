@@ -9,28 +9,21 @@
     <changeSet id="230125-113705-1" author="kossatyy">
         <insert tableName="users">
             <column name="login">admin</column>
-            <column name="password">111</column>
-            <column name="role">ADMIN</column>
-        </insert>
-    </changeSet>
-    <changeSet id="230125-113705-2" author="kossatyy">
-        <insert tableName="users">
-            <column name="login">maxim</column>
-            <column name="password">111</column>
+            <column name="password">admin</column>
             <column name="role">ADMIN</column>
         </insert>
     </changeSet>
     <changeSet id="230125-113705-3" author="kossatyy">
         <insert tableName="users">
             <column name="login">editor</column>
-            <column name="password">222</column>
+            <column name="password">editor</column>
             <column name="role">EDITOR</column>
         </insert>
     </changeSet>
     <changeSet id="230125-113705-4" author="kossatyy">
         <insert tableName="users">
-            <column name="login">mariya</column>
-            <column name="password">333</column>
+            <column name="login">user</column>
+            <column name="password">user</column>
             <column name="role">USER</column>
         </insert>
     </changeSet>
