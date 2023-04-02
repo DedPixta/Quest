@@ -3,8 +3,10 @@ package dev.makos.quest.controller.game;
 import dev.makos.quest.config.Container;
 import dev.makos.quest.dto.GameDto;
 import dev.makos.quest.dto.GameSessionDto;
+import dev.makos.quest.dto.LevelDto;
 import dev.makos.quest.entity.Requirement;
 import dev.makos.quest.service.GameService;
+import dev.makos.quest.service.LevelService;
 import dev.makos.quest.service.RequirementService;
 import dev.makos.quest.utils.Attribute;
 import dev.makos.quest.utils.ErrorMessage;
@@ -25,6 +27,7 @@ public class RequirementServlet extends HttpServlet {
 
     private final RequirementService requirementService = Container.getInstance(RequirementService.class);
     private final GameService gameService = Container.getInstance(GameService.class);
+    private final LevelService levelService = Container.getInstance(LevelService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,6 +53,9 @@ public class RequirementServlet extends HttpServlet {
 
         GameDto gameDto = (GameDto) currentSession.getAttribute(Attribute.GAME);
         gameService.updateLevel(gameSessionDto, gameDto.getStartLevelId());
+
+        LevelDto levelDto = levelService.getLevel(gameDto.getStartLevelId(), requirement);
+        req.setAttribute(Attribute.LEVEL, levelDto);
         Jsp.forward(req, resp, Jsp.LEVEL);
     }
 }

@@ -48,6 +48,7 @@ public class LevelServlet extends HttpServlet {
             } else {
                 int buttonNumber = Integer.parseInt(button);
                 Long nextLevelId = levelService.getNextLevelId(currentLevelId, requirement, buttonNumber);
+                gameService.updateStatus(gameSessionDto, nextLevel.getGameStatus());
                 nextLevel = levelService.getLevel(nextLevelId, requirement);
                 gameService.updateLevel(gameSessionDto, nextLevelId);
             }
