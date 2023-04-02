@@ -4,13 +4,14 @@
 <jsp:useBean id="game" scope="session" type="dev.makos.quest.dto.GameDto"/>
 <jsp:useBean id="gameSession" scope="session" type="dev.makos.quest.dto.GameSessionDto"/>
 <jsp:useBean id="level" scope="request" type="dev.makos.quest.dto.LevelDto"/>
+<c:set var="context" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="${context}/images/favicon.png" type="image/x-icon">
 
     <%--    Fonts   --%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,14 +20,14 @@
     <%--    Styles   --%>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/game.css"/>
+    <link rel="stylesheet" href="${context}/static/game.css"/>
 </head>
 <body>
-<div class="container d-flex flex-column align-items-center" style="background-image: url(${pageContext.request.contextPath}/images/games/game_${game.id}/util/bg.jpg);">
+<div class="container d-flex flex-column align-items-center" style="background-image: url(${context}/images/games/game_${game.id}/util/bg.jpg);">
     <div class="header container-fluid">
         <h1 class="header-brand"><c:out value="${game.name}"/></h1>
         <div class="button-menu">
-            <a class="header-text" href="${pageContext.request.contextPath}/game?gameId=${game.id}">Menu</a>
+            <a class="header-text" href="${context}/game?gameId=${game.id}">Menu</a>
         </div>
     </div>
     <div class="container-fluid d-flex justify-content-center">
@@ -36,8 +37,8 @@
             <p class="text">
             <c:out value="${level.name}"/></p>
         </div>
-        <div class="jumbotron p-3 p-md-5" style="background-image: url(/images/games/game_${game.id}/util/bg_card.jpg);">
-            <img src="${pageContext.request.contextPath}/images/games/game_${game.id}/${level.image}" class="image img-fluid shadow" alt="image">
+        <div class="jumbotron p-3 p-md-5" style="background-image: url(${context}/images/games/game_${game.id}/util/bg_card.jpg);">
+            <img src="${context}/images/games/game_${game.id}/${level.image}" class="image img-fluid shadow" alt="image">
             <div class="block_text mt-3 p-3">
                 <p class="text text-start lead">${level.description}</p>
             </div>
