@@ -1,4 +1,4 @@
-FROM maven:3.9.0-eclipse-temurin-17-alpine AS build
+FROM maven:3.9.0-amazoncorretto-17 AS build
 
 # Copy pom.xml to the image
 COPY pom.xml /home/app/pom.xml
@@ -12,7 +12,7 @@ RUN mvn -f /home/app/pom.xml package
 FROM tomcat:10.1.7-jdk17-temurin
 
 # Copy source files to tomcat folder structure
-COPY --from=build /home/app/target/Tomb-of-Magic-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/quest.war
+COPY --from=build /home/app/target/Quest-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/quest.war
 
 EXPOSE 8080
 

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<%@ page import="dev.makos.game.tombofmagic.entity.Role" %>
+<%@ page import="dev.makos.quest.entity.Role" %>
 
 <!DOCTYPE html>
 <html>

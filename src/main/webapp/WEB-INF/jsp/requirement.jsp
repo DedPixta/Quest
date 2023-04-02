@@ -1,7 +1,7 @@
 <%--suppress CssUnknownTarget --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="game" scope="session" type="dev.makos.game.tombofmagic.dto.GameDto"/>
+<jsp:useBean id="game" scope="session" type="dev.makos.quest.dto.GameDto"/>
 
 <!DOCTYPE html>
 <html>
